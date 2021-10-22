@@ -7,5 +7,17 @@
 
 void bubble_sort(int *array, size_t size)
 {
+	size_t i;
+	int aux;
 
+	for (i = 0; i < size - 1; i++)
+	{
+		if (array[i] > array[i + 1])
+		{
+			aux = array[i + 1];
+			array[i + 1] = array[i];
+			array[i] = aux;
+			i = 0;
+		}
+	}
 }
