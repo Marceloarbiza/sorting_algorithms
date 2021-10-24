@@ -4,17 +4,15 @@
   *
   */
 
-void node_swap(listint_t **list, listint_t *left, listint_t *right)
+void node_swap(listint_t *left, listint_t *right)
 {
         listint_t *tmp;
 
         tmp = left->prev;
         if (tmp)
                 tmp->next = right;
-        else
-                *list = right;
-        
         right->prev = tmp;
+
         left->prev = right;
         left->next = right->next;
         right->next = left;
@@ -36,11 +34,11 @@ void cocktail_sort_list(listint_t **list)
         {
                 flag = false;
         
-                for (tmp = *list; tmp; tmp = tmp->next)
+                for (tmp = (*list)->next; tmp; tmp = tmp->next)
                 {
                         if (tmp->next && (tmp->n > tmp->next->n))
                         {
-                                node_swap(list, tmp, tmp->next);
+                                node_swap(tmp, tmp->next);
                                 flag = true;
                                 print_list(*list);
                         }
