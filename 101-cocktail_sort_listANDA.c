@@ -10,23 +10,17 @@ void node_swap(listint_t **list, listint_t *left, listint_t *right)
 
         tmp = left->prev;
         if (tmp)
-        {
                 tmp->next = right;
-        }
         else
-        {
                 *list = right;
-        }
         
-        if (right->next)
-        {
-                right->next->prev = left;
-        }
-
         right->prev = tmp;
         left->prev = right;
         left->next = right->next;
         right->next = left;
+        
+        if(left->next != NULL)
+                left->next->prev = left;
 }
 
 void cocktail_sort_list(listint_t **list)
