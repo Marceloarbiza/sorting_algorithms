@@ -40,7 +40,7 @@ void cocktail_sort_list(listint_t **list)
                         {
                                 node_swap(tmp, tmp->next);
                                 flag = true;
-                                print_list(*list);
+                                print_list(*list);     
                         }
                 }
 
