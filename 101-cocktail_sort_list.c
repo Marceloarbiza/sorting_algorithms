@@ -40,12 +40,21 @@ void cocktail_sort_list(listint_t **list)
                         {
                                 node_swap(tmp, tmp->next);
                                 flag = true;
-                                print_list(*list);     
+                                print_list(*list);
                         }
                 }
-
-/*                if (flag == false)
+/*
+                if (flag == false)
                         break;
-*/
+
+                for (; tmp; tmp = tmp->prev)
+                {
+                        if ((tmp->n < tmp->prev->n) && tmp->prev)
+                        {
+                                node_swap(tmp->prev, tmp);
+                                flag = true;
+                                print_list(*list);
+                        }
+                }*/
         }
 }
