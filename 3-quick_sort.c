@@ -1,6 +1,8 @@
 #include "sort.h"
 /**
-  *
+  * swap - swap
+  * @a: int *
+  * @b: int *
   */
 
 void swap(int *a, int *b)
@@ -9,6 +11,15 @@ void swap(int *a, int *b)
         *a = *b;
         *b = tmp;
 }
+
+/**
+  * partition - partition
+  * @array: array
+  * @low: low
+  * @high: high
+  * @size: size
+  * Return: int
+  */
 
 int partition(int *array, int low, int high, size_t size)
 {
@@ -32,6 +43,14 @@ int partition(int *array, int low, int high, size_t size)
         return (i + 1);
 }
 
+/**
+  * quicksort - quicksort
+  * @array: array
+  * @low: low
+  * @high: high
+  * @size: size
+  */
+
 void quicksort( int *array, int low, int high, size_t size)
 {
         if (low < high)
@@ -41,6 +60,13 @@ void quicksort( int *array, int low, int high, size_t size)
                 quicksort(array, pi + 1, high, size);
         }
 }
+
+/**
+  * quick_sort - quick sort
+  * @array: array
+  * @size: size
+  */
+
 void quick_sort(int *array, size_t size)
 {
         quicksort(array, 0, size - 1, size);
