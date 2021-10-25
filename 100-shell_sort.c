@@ -26,6 +26,6 @@ void shell_sort(int *array, size_t size)
 			}
 			array[j] = aux;
 		}
-		gap = (gap - 1) / 3;
+		gap = gap / 3;
 	}
 }
